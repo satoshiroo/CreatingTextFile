@@ -24,5 +24,10 @@ namespace CreatingTextFile
             SetFileName = txtFileName.Text + ".txt";
             this.Close();
         }
+
+        private void FrmFileName_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

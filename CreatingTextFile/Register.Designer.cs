@@ -42,12 +42,13 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
-            this.txtContactNo = new System.Windows.Forms.TextBox();
+            this.txtContact = new System.Windows.Forms.TextBox();
             this.txtMI = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.cmbProgram = new System.Windows.Forms.ComboBox();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.btnRecords = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -179,12 +180,12 @@
             this.dtpBirthday.Size = new System.Drawing.Size(245, 20);
             this.dtpBirthday.TabIndex = 13;
             // 
-            // txtContactNo
+            // txtContact
             // 
-            this.txtContactNo.Location = new System.Drawing.Point(506, 268);
-            this.txtContactNo.Name = "txtContactNo";
-            this.txtContactNo.Size = new System.Drawing.Size(240, 20);
-            this.txtContactNo.TabIndex = 14;
+            this.txtContact.Location = new System.Drawing.Point(506, 268);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(240, 20);
+            this.txtContact.TabIndex = 14;
             // 
             // txtMI
             // 
@@ -228,18 +229,31 @@
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnRecords
+            // 
+            this.btnRecords.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRecords.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRecords.Location = new System.Drawing.Point(596, 331);
+            this.btnRecords.Name = "btnRecords";
+            this.btnRecords.Size = new System.Drawing.Size(169, 56);
+            this.btnRecords.TabIndex = 20;
+            this.btnRecords.Text = "Records";
+            this.btnRecords.UseVisualStyleBackColor = false;
+            this.btnRecords.Click += new System.EventHandler(this.btnRecords_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRecords);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.cmbGender);
             this.Controls.Add(this.cmbProgram);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.txtMI);
-            this.Controls.Add(this.txtContactNo);
+            this.Controls.Add(this.txtContact);
             this.Controls.Add(this.dtpBirthday);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.txtLastName);
@@ -278,11 +292,12 @@
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.DateTimePicker dtpBirthday;
-        private System.Windows.Forms.TextBox txtContactNo;
+        private System.Windows.Forms.TextBox txtContact;
         private System.Windows.Forms.TextBox txtMI;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.ComboBox cmbProgram;
         private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Button btnRecords;
     }
 }

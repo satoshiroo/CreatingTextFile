@@ -82,6 +82,7 @@
             this.Controls.Add(this.txtFileName);
             this.Name = "FrmFileName";
             this.Text = "FrmFileName";
+            this.Load += new System.EventHandler(this.FrmFileName_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

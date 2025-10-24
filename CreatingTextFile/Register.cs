@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CreatingTextFile
 {
@@ -25,41 +26,32 @@ namespace CreatingTextFile
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string studentNo = txtStudentNo.Text.Trim();
-                string lastName = txtLastName.Text.Trim();
-                string firstName = txtFirstName.Text.Trim();
-                string mi = txtMI.Text.Trim();
-                string program = cmbProgram.Text.Trim();
-                string gender = cmbGender.Text.Trim();
-                string age = txtAge.Text.Trim();
-                string birthday = dtpBirthday.Value.ToString("yyyy-MM-dd");
-                string contact = txtContactNo.Text.Trim();
+            string studentNo = txtStudentNo.Text;
+            string lastName = txtLastName.Text;
+            string firstName = txtFirstName.Text;
+            string mi = txtMI.Text;
+            string age = txtAge.Text;
+            string program = cmbProgram.Text;
+            string gender = cmbGender.Text;
+            string birthday = dtpBirthday.Text;
+            string contact = txtContact.Text;
 
-                string folderPath = Path.GetFullPath(Path.Combine(Application.StartupPath, @"..\..\..\SAVED FILES"));
-                Directory.CreateDirectory(folderPath);
-                string filePath = Path.Combine(folderPath, studentNo + ".txt");
+            FrmStudentRecord recordForm = new FrmStudentRecord();
+            recordForm.AddStudentRecord(studentNo, lastName, firstName, mi, age, program, gender, birthday, contact);
+            this.Hide();
+            recordForm.ShowDialog();
+            this.Show();
 
-                using (StreamWriter writer = new StreamWriter(filePath))
-                {
-                    writer.WriteLine($"Student No.: {studentNo}");
-                    writer.WriteLine($"Full Name: {lastName}, {firstName}, {mi}");
-                    writer.WriteLine($"Program: {program}");
-                    writer.WriteLine($"Gender: {gender}");
-                    writer.WriteLine($"Age: {age}");
-                    writer.WriteLine($"Birthday: {birthday}");
-                    writer.WriteLine($"Contact No.: {contact}");
-                }
+            txtStudentNo.Clear();
+            txtLastName.Clear();
+            txtFirstName.Clear();
+            txtMI.Clear();
+            txtAge.Clear();
+            cmbProgram.SelectedIndex = -1;
+            cmbGender.SelectedIndex = -1;
+            dtpBirthday.Value = DateTime.Now;
+            txtContact.Clear();
 
-                MessageBox.Show("Registration saved successfully!\n\nSaved to:\n" + filePath,
-                                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error saving registration:\n" + ex.Message,
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void Register_Load(object sender, EventArgs e)
@@ -74,6 +66,14 @@ namespace CreatingTextFile
 
             cmbProgram.SelectedIndex = 0; 
             cmbGender.SelectedIndex = 0;
+        }
+
+        private void btnRecords_Click(object sender, EventArgs e)
+        {
+            FrmStudentRecord recordForm = new FrmStudentRecord();
+            this.Hide();
+            recordForm.ShowDialog();
+            this.Show();
         }
     }
     }

@@ -43,8 +43,8 @@ namespace CreatingTextFile
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Register reg = new Register();
-            reg.ShowDialog();
+            FrmStudentRecord regForm = new FrmStudentRecord();
+            regForm.ShowDialog();
         }
     }
     }
